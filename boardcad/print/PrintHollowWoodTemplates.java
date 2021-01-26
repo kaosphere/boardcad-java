@@ -2,7 +2,7 @@ package boardcad.print;
 
 /**
 
- * @author Håvard
+ * @author HÃ¥vard
 
  *
 
@@ -209,11 +209,11 @@ public class PrintHollowWoodTemplates extends JComponent implements Printable {
 					mWebbing = webbing;
 					mCurrentPrintState = PrintState.PRINT_CROSSSECTION_TEMPLATES;
 		
-					int nrOfCrossSections = (int)((BoardCAD.getInstance().getCurrentBrd().getLength() - 9.0*UnitUtils.INCH)/UnitUtils.FOOT);
+					int nrOfCrossSections = (int)(BoardCAD.getInstance().getCurrentBrd().getLength()/ (8 * UnitUtils.INCH)) - 1;
 					
 					for(int i = 0; i < nrOfCrossSections; i++)
 					{
-						mCrosssectionPos = (i+1)* UnitUtils.FOOT;
+						mCrosssectionPos = (i+1)* (8 * UnitUtils.INCH);
 						myPrintJob.print();
 					}
 	
